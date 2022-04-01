@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ReelsFragment">
+
+    <ImageView
+        android:id="@+id/reel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/reelsTextStyle"
+        android:text="@string/reels"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="@id/start_guideline"
+        app:layout_constraintTop_toTopOf="@id/top_guideline" />
+
+    <ImageView
+        android:id="@+id/camera"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:scaleType="center"
+        android:src="@drawable/camera"
+        app:layout_constraintRight_toRightOf="@id/end_guideline"
+        app:layout_constraintTop_toBottomOf="@id/top_guideline"/>
+
+
+
+    <ImageView
+        android:id="@+id/dots"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:scaleType="center"
+        android:src="@drawable/more"
+        app:layout_constraintTop_toBottomOf="@+id/share"
+        app:layout_constraintTop_toTopOf="@id/dotsGuideline"
+        app:layout_constraintEnd_toStartOf="@id/end_guideline"/>
+
+    <ImageView
+        android:id="@+id/share"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:scaleType="center"
+        android:src="@drawable/share_arrow"
+        app:layout_constraintTop_toBottomOf="@id/comments_layout"
+        app:layout_constraintBottom_toTopOf="@id/dots"
+        app:layout_constraintEnd_toStartOf="@id/end_guideline"/>
+
+    <LinearLayout
+        android:id="@+id/comments_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/likes_layout"
+        app:layout_constraintBottom_toTopOf="@id/share"
+        app:layout_constraintEnd_toStartOf="@id/end_guideline">
+
+        <ImageView
+            android:id="@+id/comments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/comment"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:id="@+id/comments_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/reelsTextStyle"
+            android:textSize="16sp"
+            android:text="110" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/likes_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/comments_layout"
+        app:layout_constraintEnd_toStartOf="@id/end_guideline"
+        app:layout_constraintTop_toBottomOf="@id/middle55_guideline"
+        app:layout_constraintVertical_chainStyle="spread">
+
+        <ImageView
+            android:id="@+id/like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:src="@drawable/like" />
+
+        <TextView
+            android:id="@+id/likes_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/reelsTextStyle"
+            android:textSize="16sp"
+            android:text="19.6k" />
+    </LinearLayout>
+
+
+
+    <ImageView
+        android:id="@+id/user_icon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/profile_icon"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toRightOf="@id/start_guideline"
+        app:layout_constraintBottom_toTopOf="@id/descriptionTopBarrier"
+        app:layout_constraintRight_toLeftOf="@id/username"
+        app:layout_constraintTop_toBottomOf="@id/iconTopBarrier"/>
+
+    <TextView
+        android:id="@+id/username"
+        style="@style/reelsTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxEms="5"
+        android:maxLines="1"
+        android:text="@string/username"
+        android:textSize="25sp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/subscribe_btn"
+        app:layout_constraintLeft_toRightOf="@id/user_icon"
+        app:layout_constraintRight_toLeftOf="@id/subscribe_btn" />
+
+    <Button
+        android:id="@+id/subscribe_btn"
+        style="@style/reelsTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/subscribe_button"
+        android:minHeight="0dp"
+        android:padding="0dp"
+        android:text="@string/follow"
+        android:textSize="18sp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@id/descriptionTopBarrier"
+        app:layout_constraintLeft_toRightOf="@id/username"
+        app:layout_constraintTop_toBottomOf="@id/iconTopBarrier"/>
+
+
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/reelsTextStyle"
+        android:text="@string/description"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:textSize="16sp"
+        android:maxLines="10"
+        android:ellipsize="end"
+        android:maxEms="15"
+        app:layout_constraintLeft_toRightOf="@id/start_guideline"
+        app:layout_constraintBottom_toTopOf="@id/note"
+        app:layout_constraintTop_toBottomOf="@id/descriptionTopBarrier"/>
+
+
+
+    <ImageView
+        android:id="@+id/note"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/note"
+        android:scaleType="center"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_guideline"
+        app:layout_constraintLeft_toRightOf="@id/start_guideline"
+        app:layout_constraintRight_toLeftOf="@id/track"/>
+
+    <TextView
+        android:id="@+id/track"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/track"
+        style="@style/reelsTextStyle"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_guideline"
+        app:layout_constraintLeft_toRightOf="@id/note"/>
+
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="23dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="30dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="32dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="30dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/dotsGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="145dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middle55_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".50"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/descriptionTopBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="description"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/iconTopBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="user_icon"/>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/music_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="note, track"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
