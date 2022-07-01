@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Lesson5</string>
+    <string name="reels">Reels</string>
+    <string name="settings">Settings</string>
+    <string name="username">awsm_jane</string>
+    <string name="follow">Follow</string>
+    <string name="track">Original music</string>
+    <string name="description">Try at your own risk</string>
+
+    <string name="archive">Archive</string>
+    <string name="your_activity">Your activity</string>
+    <string name="qr_code">QR code</string>
+    <string name="saved">Saved</string>
+    <string name="close_friends">Close friends</string>
+    <string name="discover_people">Discover people</string>
+    <string name="covid_info">COVID-19 Information Center</string>
+
+    <string name="splash_tip">Tip: swipe to change fragments</string>
+
+    <string name="load">Load contacts</string>
 </resources>
